@@ -13,7 +13,7 @@ export const Zx9Showcase = () => {
           />
         </div>
       </div>
-      <div className="hidden md:block absolute -bottom-6 left-0 z-10">
+      <div className="hidden md:block absolute -bottom-6 md:left-10 lg:left-20 z-10">
         <Image
           src={"/images/showcase/speaker-showcase.png"}
           alt="speaker showcase"
