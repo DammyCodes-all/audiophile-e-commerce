@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 const Hero = () => {
   return (
-    <section className="bg-theme-dark min-h-dvh flex justify-center px-4 sm:px-10 lg:px-[165px] md:justify-between items-center relative overflow-hidden">
+    <section className="bg-theme-dark min-h-dvh flex justify-center px-4 sm:px-10 lg:px-[165px] md:justify-between items-center relative overflow-hidden pb-10 ">
       <div className="space-y-6 text-center md:text-left z-10">
         <h3 className="font-normal text-theme-white/50 tracking-[6px] sm:tracking-[10px] leading-[100%] text-xs sm:text-sm md:text-base text-center md:text-left">
           NEW PRODUCTS
@@ -21,23 +21,27 @@ const Hero = () => {
         </div>
       </div>
       <div
-        className="overflow-hidden
-        mt-5
+        className="
+        mt-10 sm:mt-1 md:mt-0
         absolute inset-0 flex justify-center items-center
-        md:static md:flex-none
+        md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2
+        size-full
         z-0
       "
       >
         <Image
+          src={"/images/hero-desktop.jpg"}
+          alt="bg-hero"
+          fill
+          className="opacity-70 hidden md:block object-cover object-center"
+          loading="eager"
+        />
+        <Image
           src={"/images/hero.png"}
           alt="bg-hero"
           width={600}
-          height={600}
-          className="
-            object-cover mt-10 md:-mt-15
-            w-[400px] h-[500px] sm:w-[700px] sm:h-[700px] md:w-[500px] md:h-[500px] opacity-40
-            md:opacity-70
-          "
+          height={400}
+          className="block md:hidden object-contain w-full max-h-[500px] sm:max-h-[550px] mt-8 opacity-40 md:opacity-70 pointer-events-none -translate-y-2"
           loading="eager"
         />
       </div>

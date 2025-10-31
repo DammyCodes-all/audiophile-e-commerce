@@ -36,14 +36,21 @@ export const Zx9Showcase = () => {
         <Image
           src={"/images/oval.png"}
           alt=""
-          className="hidden md:block"
+          className="hidden md:block object-cover"
+          loading="lazy"
+          fill
+        />
+        <Image
+          src={"/images/oval-tab.png"}
+          alt=""
+          className="hidden sm:block md:hidden object-cover"
           loading="lazy"
           fill
         />
         <Image
           src={"/images/oval-mobile.png"}
           alt=""
-          className="md:hidden object-cover"
+          className="sm:hidden object-cover"
           loading="lazy"
           fill
         />
