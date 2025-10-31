@@ -1,3 +1,9 @@
+import Hero from "@/app/_components/Hero";
+
 export default function Home() {
-  return <section className="bg-theme-dark min-h-dvh pt-20"></section>;
+  return (
+    <main className="">
+      <Hero />
+    </main>
+  );
 }

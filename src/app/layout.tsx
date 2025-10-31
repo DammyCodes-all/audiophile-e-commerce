@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${manrope.className} antialiased max-w-[1440px] mx-auto text-theme-light`}
+        className={`${manrope.className} antialiased max-w-[1440px] mx-auto text-theme-light overflow-x-hidden`}
       >
         <Navbar /> {children}
       </body>
