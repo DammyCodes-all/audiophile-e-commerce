@@ -14,7 +14,7 @@ const Footer = () => {
           ))}
         </nav>
       </section>
-      <p className="text-theme-white/50 leading-[25px] text-center sm:text-center">
+      <p className="text-theme-white/50 leading-[25px] text-center sm:text-left">
         Audiophile is an all in one stop to fulfill your audio needs. We&apos;re
         a small team of music lovers and sound specialists who are devoted to
         helping you get the most out of personal audio. Come and visit our demo
