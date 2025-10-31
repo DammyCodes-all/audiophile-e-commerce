@@ -1,12 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-export const BigBtn = ({ text, color }: { text: string; color: string }) => {
+export const BigBtn = ({
+  text,
+  className,
+}: {
+  text?: string;
+  className?: string;
+}) => {
   return (
     <Button
-      className={`uppercase flex justify-center items-center rounded-none font-bold tracking-[1px] bg-theme-dark-orange hover:bg-theme-light-orange transition-colors duration-300 text-xs sm:text-sm cursor-pointer px-6 sm:px-8 py-3 sm:py-4 hover:border-theme-dark-orange hover:border-2 ${color}`}
+      className={`uppercase flex justify-center items-center rounded-none font-bold tracking-[1px] bg-theme-dark-orange hover:bg-theme-light-orange transition-classNames duration-300 text-xs sm:text-sm cursor-pointer px-6 sm:px-8 py-3 sm:py-4 ${className}`}
     >
-      {text}
+      {text ?? "SEE PRODUCTS"}
     </Button>
   );
 };

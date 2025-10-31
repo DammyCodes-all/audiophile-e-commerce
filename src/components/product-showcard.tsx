@@ -14,16 +14,15 @@ const ProductShowCard = ({ product }: { product: ProductShow }) => {
           height={120}
           className="w-[120px] h-[120px] object-contain"
         />
-        {/* Shadow under image */}
         <div className="w-20 h-5 bg-black/30 rounded-full blur-md -mt-4"></div>
       </div>
-      <div className="flex flex-col justify-end py-7.5 items-center w-full z-20">
-        <h3 className="uppercase font-bold tracking-[1.29px] text-center text-theme-dark ">
+      <div className="flex flex-col justify-end py-6 sm:py-7.5 items-center w-full z-20">
+        <h3 className="uppercase font-bold tracking-[0.8px] sm:tracking-[1.29px] text-center text-theme-dark text-sm sm:text-[13px] md:text-base lg:text-lg">
           {product.name}
         </h3>
         <Link
           href={product.href}
-          className="hover:text-theme-dark-orange text-black/50 cursor-pointer transition-colors duration-300 flex justify-center items-center text-[13px] gap-1"
+          className="hover:text-theme-dark-orange text-black/50 cursor-pointer transition-colors duration-300 flex justify-center items-center text-xs sm:text-[13px] md:text-sm gap-1"
         >
           SHOP
           <span className="text-theme-dark-orange hover:text-theme-dark-orange bg-none">
