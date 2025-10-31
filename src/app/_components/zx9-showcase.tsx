@@ -19,6 +19,7 @@ export const Zx9Showcase = () => {
           alt="speaker showcase"
           width={400}
           height={800}
+          className="md:w-[350] md:h-[500]"
         />
       </div>
       <div className="z-20 flex flex-col items-center text-center md:items-start md:text-left">
@@ -42,7 +43,7 @@ export const Zx9Showcase = () => {
         <Image
           src={"/images/oval-mobile.png"}
           alt=""
-          className="md:hidden"
+          className="md:hidden object-cover"
           loading="lazy"
           fill
         />

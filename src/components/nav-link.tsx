@@ -12,7 +12,7 @@ export const NavLink = ({ name, href }: NavlinkProps) => {
   return (
     <Link
       href={href}
-      className={` text-[13px]  capitalize font-bold transition-colors duration-300 ${
+      className={` text-[13px]  capitalize font-bold transition-colors hover:text-theme-dark-orange duration-300 ${
         isActive ? "text-theme-dark-orange" : "text-theme-white"
       }`}
     >
