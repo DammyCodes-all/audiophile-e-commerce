@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import navLinks from "@/lib/constants";
+import { navLinks } from "@/lib/constants";
 import { ShoppingCart, Menu, X } from "lucide-react";
 import { NavLink } from "./nav-link";
 
@@ -9,7 +9,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="w-full flex fixed top-0 justify-center items-center px-10 lg:px-[165px] z-50">
+    <div className="w-full flex bg-theme-dark justify-center items-center px-10 lg:px-[165px] z-50 ">
       <div className="flex justify-between items-center py-8 lg:py-9 max-w-[1110px] mx-auto border-b border-theme-white w-full">
         <div className="flex gap-9 justify-center items-center">
           {/* Hamburger Icon for mobile */}
