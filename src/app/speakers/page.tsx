@@ -2,24 +2,24 @@ import About from "@/components/about";
 import PageHead from "@/components/page-head";
 import Product from "@/components/product";
 import ProductShowContainer from "@/components/product-showcard-container";
-import { headphoneProductList } from "@/lib/constants";
+import { speakerProductList } from "@/lib/constants";
 
-const HeadPhonesPage = () => {
+const SpeakerPage = () => {
   return (
     <>
-      <PageHead>HEADPHONES</PageHead>
+      <PageHead>SPEAKERS</PageHead>
       <main className="min-h-dvh px-10 lg:px-[165px] flex flex-col gap-10 space-y-20 pb-20">
         <section
           id="product-container"
-          className="w-full flex-col gap-40 flex items-center pt-30"
+          className="w-full flex-col gap-40 items-center pt-30 flex"
         >
-          {headphoneProductList.map((product) => {
-            const order = product.name === "xx99 mark I";
+          {speakerProductList.map((product) => {
+            const order = product.name === "zx7";
             return (
               <Product
                 key={product.name}
                 imageUrl={product.imageUrl}
-                category={"HEADPHONES"}
+                category={"SPEAKERS"}
                 desc={product.desc}
                 name={product.name}
                 order={order}
@@ -36,4 +36,4 @@ const HeadPhonesPage = () => {
   );
 };
 
-export default HeadPhonesPage;
+export default SpeakerPage;

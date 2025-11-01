@@ -51,7 +51,12 @@ const Navbar = () => {
           </button>
           <nav className="flex flex-col gap-8 items-center">
             {navLinks.map((link) => (
-              <NavLink key={link.name} href={link.href} name={link.name} />
+              <NavLink
+                key={link.name}
+                href={link.href}
+                name={link.name}
+                onClick={() => setMenuOpen(false)}
+              />
             ))}
           </nav>
         </div>

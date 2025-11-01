@@ -41,3 +41,15 @@ export const headphoneProductList = [
     desc: "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
   },
 ];
+export const speakerProductList = [
+  {
+    name: "zx9",
+    imageUrl: "/images/speakers/zx9-speaker.jpg",
+    desc: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
+  },
+  {
+    name: "zx7",
+    imageUrl: "/images/speakers/zx7-speaker.jpg",
+    desc: "Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
+  },
+];
