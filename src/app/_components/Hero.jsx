@@ -22,7 +22,6 @@ const Hero = () => {
       </div>
       <div
         className="
-        mt-10 sm:mt-1 md:mt-0
         absolute inset-0 flex justify-center items-center
         md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2
         size-full
@@ -41,7 +40,7 @@ const Hero = () => {
           alt="bg-hero"
           width={600}
           height={400}
-          className="block md:hidden object-contain w-full max-h-[500px] sm:max-h-[550px] mt-8 opacity-40 md:opacity-70 pointer-events-none -translate-y-2"
+          className="block md:hidden object-contain w-full max-h-[600px] sm:max-h-[750px] -mt-8 opacity-40 pointer-events-none transform -translate-y-2 scale-105"
           loading="eager"
         />
       </div>
