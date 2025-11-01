@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { BigBtn } from "@/components/btn";
+import Link from "next/link";
 export const Zx9Showcase = () => {
   return (
     <div className="bg-theme-dark-orange w-full overflow-hidden h-[560px] rounded-xl relative flex flex-col md:flex-row md:justify-between items-center px-4 lg:px-0 ">
@@ -30,7 +31,12 @@ export const Zx9Showcase = () => {
           Upgrade to premium speakers that are phenomenally built to deliver
           truly remarkable sound.
         </p>
-        <BigBtn className="mt-10 bg-black cursor-pointer hover:bg-theme-dark/74" />
+        <Link href={"/speakers/zx9-speaker"}>
+          <BigBtn
+            className="mt-10 bg-black cursor-pointer hover:bg-theme-dark/74"
+            text="see product"
+          />
+        </Link>
       </div>
       <div className="absolute inset-0 w-full md:w-8/10 h-full pointer-events-none z-0">
         <Image

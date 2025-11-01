@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { BigBtn } from "./btn";
+import Link from "next/link";
 
 const Product = ({
   imageUrl,
@@ -7,12 +8,14 @@ const Product = ({
   category,
   order,
   desc,
+  href,
 }: {
   imageUrl: string;
   name: string;
   category: string;
   order?: boolean;
   desc: string;
+  href: string;
 }) => {
   return (
     <div className="flex flex-col md:flex-row md:justify-between items-center gap-10">
@@ -37,9 +40,15 @@ const Product = ({
           {name} <br /> {category}
         </h1>
         <p className="text-theme-black/50 text-sm leading-3.5 mt-5">{desc}</p>
-        <div className="w-full flex justify-center md:justify-start">
-          <BigBtn className="bg-theme-dark-orange text-white hover:bg-theme-light-orange mt-5" />
-        </div>
+        <Link
+          href={href}
+          className="w-full flex justify-center md:justify-start"
+        >
+          <BigBtn
+            className="bg-theme-dark-orange text-white hover:bg-theme-light-orange mt-5"
+            text="see product"
+          />
+        </Link>
       </div>
     </div>
   );

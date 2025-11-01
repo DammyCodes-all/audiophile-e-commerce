@@ -4,6 +4,7 @@ import { Zx9Showcase } from "./_components/zx9-showcase";
 import Image from "next/image";
 import { BigBtn } from "@/components/btn";
 import About from "@/components/about";
+import Link from "next/link";
 export default function Home() {
   return (
     <main className="overflow-hidden">
@@ -27,10 +28,12 @@ export default function Home() {
                 <h1 className="font-bold tracking-[2px] text-2xl uppercase w-fit">
                   ZX7 SPEAKER
                 </h1>
-                <BigBtn
-                  text="SEE PRODUCT"
-                  className="bg-transparent border-2 border-theme-black hover:bg-theme-black mt-8 text-black hover:text-white w-fit"
-                />
+                <Link href={"/speakers/zx7-speaker"}>
+                  <BigBtn
+                    text="SEE PRODUCT"
+                    className="bg-transparent border-2 border-theme-black hover:bg-theme-black mt-8 text-black hover:text-white w-fit"
+                  />
+                </Link>
               </div>
             </div>
           </div>
@@ -48,10 +51,12 @@ export default function Home() {
               <h1 className="font-bold tracking-[2px] text-2xl uppercase w-fit">
                 yx1 earphones
               </h1>
-              <BigBtn
-                text="SEE PRODUCT"
-                className="bg-transparent border-2 border-theme-black hover:bg-theme-black mt-8 text-black hover:text-white w-fit"
-              />
+              <Link href={"/earphones/yx1-earphone"}>
+                <BigBtn
+                  text="SEE PRODUCT"
+                  className="bg-transparent border-2 border-theme-black hover:bg-theme-black mt-8 text-black hover:text-white w-fit"
+                />
+              </Link>
             </div>
           </section>
         </section>

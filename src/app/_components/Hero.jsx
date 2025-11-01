@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 const Hero = () => {
   return (
     <section className="bg-theme-dark min-h-dvh flex justify-center px-4 sm:px-10 lg:px-[165px] md:justify-between items-center relative overflow-hidden pb-10 ">
@@ -14,11 +15,14 @@ const Hero = () => {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
-        <div className="flex justify-center md:justify-start">
-          <Button className="uppercase flex justify-center items-center rounded-none font-bold tracking-[1px] bg-theme-dark-orange hover:bg-theme-light-orange transition-colors duration-300 text-xs sm:text-sm cursor-pointer px-6 sm:px-8 py-3 sm:py-4 hover:border-theme-dark-orange hover:border-2">
+        <Link
+          href={"/headphones/xx99-mark-II"}
+          className="flex justify-center md:justify-start"
+        >
+          <Button className="uppercase flex justify-center items-center rounded-none font-bold tracking-[1px] bg-theme-dark-orange hover:bg-theme-light-orange transition-colors duration-300 text-xs sm:text-sm cursor-pointer px-6 sm:px-8 py-3 sm:py-4">
             See Product
           </Button>
-        </div>
+        </Link>
       </div>
       <div
         className="

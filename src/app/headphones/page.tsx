@@ -23,6 +23,7 @@ const HeadPhonesPage = () => {
                 desc={product.desc}
                 name={product.name}
                 order={order}
+                href={product.href}
               />
             );
           })}
