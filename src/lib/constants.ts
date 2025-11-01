@@ -53,3 +53,10 @@ export const speakerProductList = [
     desc: "Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
   },
 ];
+export const earphoneProductList = [
+  {
+    name: "yx1 wireless",
+    imageUrl: "/images/earphones/yx1-earphone.jpg",
+    desc: "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
+  },
+];
