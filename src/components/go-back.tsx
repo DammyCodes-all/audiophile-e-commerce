@@ -11,7 +11,6 @@ export default function GoBackButton({ fallback = "/" }: GoBackProps) {
   const router = useRouter();
 
   function handleBack() {
-    // router.back() will go to previous entry in history; if none, navigate to fallback
     if (typeof window !== "undefined" && window.history.length > 1) {
       router.back();
     } else {
