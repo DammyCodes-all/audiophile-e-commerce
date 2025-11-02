@@ -16,7 +16,7 @@ const Hero = () => {
           for the passionate music enthusiast.
         </p>
         <Link
-          href={"/headphones/xx99-mark-II"}
+          href={"/headphones/xx99-mark-one-headphones"}
           className="flex justify-center md:justify-start"
         >
           <Button className="uppercase flex justify-center items-center rounded-none font-bold tracking-[1px] bg-theme-dark-orange hover:bg-theme-light-orange transition-colors duration-300 text-xs sm:text-sm cursor-pointer px-6 sm:px-8 py-3 sm:py-4">
