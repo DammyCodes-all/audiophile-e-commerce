@@ -4,6 +4,7 @@ import { useState } from "react";
 import { navLinks } from "@/lib/constants";
 import { ShoppingCart, Menu, X } from "lucide-react";
 import { NavLink } from "./nav-link";
+import Link from "next/link";
 import {
   Dialog,
   DialogTrigger,
@@ -77,7 +78,7 @@ const Navbar = () => {
             {cartProducts.length === 0 && (
               <DialogDescription>Your cart is empty.</DialogDescription>
             )}
-            <div className="flex flex-col gap-10 justify-center">
+            <div className="flex flex-col gap-5 justify-center">
               {cartProducts.map((product) => (
                 <CartProduct
                   name={product.name}
@@ -94,7 +95,9 @@ const Navbar = () => {
                 cartProducts
               ).toLocaleString()}`}</h2>
             </div>
-            <BigBtn text="CheckOut" className="w-full" />
+            <Link href="/checkout">
+              <BigBtn text="CheckOut" className="w-full" />
+            </Link>
           </DialogContent>
         </Dialog>
       </div>

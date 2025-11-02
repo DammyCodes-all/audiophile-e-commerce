@@ -8,11 +8,13 @@ const CartProduct = ({
   name,
   price,
   imageUrl,
+  summary,
 }: {
   amount: number;
   name: string;
   price: number;
   imageUrl: string;
+  summary?: boolean;
 }) => {
   const { updateAmount } = useCartContext();
 
@@ -38,11 +40,15 @@ const CartProduct = ({
         </div>
       </div>
       <div>
-        <ProductCartBtn
-          count={amount}
-          onIncrement={increment}
-          onDecrement={decrement}
-        />
+        {summary ? (
+          <p className="font-bold text-theme-black/50">x{amount}</p>
+        ) : (
+          <ProductCartBtn
+            count={amount}
+            onIncrement={increment}
+            onDecrement={decrement}
+          />
+        )}
       </div>
     </div>
   );
