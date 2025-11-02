@@ -60,21 +60,18 @@ function DialogContent({
    * 'top-right-sm' centers on xs and places the dialog top-right on sm and above.
    */
   position?: "center" | "top-right-sm";
-  /**
-   * when true, the overlay will not block pointer events and will be transparent so
-   * the page can still be scrolled while the dialog is open.
-   */
-  allowScroll?: boolean;
 }) {
   const positionMap: Record<string, string> = {
     center: "top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]",
     "top-right-sm":
-      "top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] sm:top-30 sm:right-10 sm:left-auto sm:translate-x-0 sm:translate-y-0",
+      "top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] sm:top-20 sm:right-10 sm:left-auto sm:translate-x-0 sm:translate-y-0",
   };
   return (
     <DialogPortal data-slot="dialog-portal">
       <DialogOverlay
-        className={cn(allowScroll ? "pointer-events-none bg-transparent" : undefined)}
+        className={cn(
+          allowScroll ? "pointer-events-none bg-transparent" : undefined
+        )}
       />
       <DialogPrimitive.Content
         data-slot="dialog-content"

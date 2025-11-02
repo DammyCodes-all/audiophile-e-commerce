@@ -26,13 +26,13 @@ const CartProduct = ({
             <Image
               src={imageUrl}
               alt={name}
-              width={100}
-              height={100}
-              className="object-contain object-center"
+              width={70}
+              height={70}
+              className="object-contain object-center size-full"
             />
           ) : null}
         </div>
-        <div className="flex flex-col justify-center gap-2 text-black text-lg">
+        <div className="flex flex-col justify-center gap-2 text-black text-md">
           <p className="font-bold">{name}</p>
           <p className="text-black/50 font-bold">${price.toLocaleString()}</p>
         </div>

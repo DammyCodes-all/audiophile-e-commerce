@@ -59,7 +59,7 @@ const Navbar = () => {
           </DialogTrigger>
           <DialogContent
             position="top-right-sm"
-            className="text-theme-black p-10"
+            className="text-theme-black p-10  flex flex-col h-fit "
             showCloseButton={false}
           >
             <DialogTitle className="flex justify-between items-center w-full">
