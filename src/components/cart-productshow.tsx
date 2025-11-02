@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import ProductCartBtn from "./ProductCartBtn";
 import { BigBtn } from "./btn";
+import { useCartContext } from "./CartContext";
 
 const CartProductShow = ({
   imageUrl,
@@ -17,6 +21,17 @@ const CartProductShow = ({
   desc: string;
   price: number;
 }) => {
+  const [count, setCount] = useState<number>(0);
+  const { addToCart } = useCartContext();
+
+  const increment = () => setCount((c) => c + 1);
+  const decrement = () => setCount((c) => Math.max(0, c - 1));
+
+  const handleAddToCart = () => {
+    if (count <= 0) return;
+    addToCart({ amount: count, name, price, imageUrl });
+    setCount(0);
+  };
   return (
     <div className="flex flex-col sm:flex-row w-full justify-between items-center gap-10 md:h-95 sm:h-100 lg:h-100">
       <div className="size-full bg-theme-lightgray overflow-hidden rounded-md flex justify-center items-center">
@@ -47,8 +62,12 @@ const CartProductShow = ({
           })}
         </h1>
         <div className="lg:w-9/10 w-full flex gap-4 items-center">
-          <ProductCartBtn />
-          <BigBtn text="ADD to cart" className="h-full" />
+          <ProductCartBtn
+            count={count}
+            onIncrement={increment}
+            onDecrement={decrement}
+          />
+          <BigBtn text="ADD to cart" className="h-full" onClick={handleAddToCart} />
         </div>
       </div>
     </div>

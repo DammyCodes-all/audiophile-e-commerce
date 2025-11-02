@@ -1,17 +1,19 @@
 "use client";
 
 import { Plus, Minus } from "lucide-react";
-import { useState } from "react";
-const ProductCartBtn = () => {
-  const [count, setCount] = useState(0);
 
-  const decrement = () => setCount((c) => Math.max(0, c - 1));
-  const increment = () => setCount((c) => c + 1);
+type Props = {
+  count: number;
+  onIncrement: () => void;
+  onDecrement: () => void;
+};
+
+const ProductCartBtn = ({ count, onIncrement, onDecrement }: Props) => {
   return (
     <div className="flex bg-theme-lightgray p-3 gap-4 justify-between items-center w-28 h-full">
       <button
         type="button"
-        onClick={decrement}
+        onClick={onDecrement}
         aria-label="Decrease quantity"
         disabled={count === 0}
         className={`flex items-center justify-center ${
@@ -25,7 +27,7 @@ const ProductCartBtn = () => {
 
       <button
         type="button"
-        onClick={increment}
+        onClick={onIncrement}
         aria-label="Increase quantity"
         className="flex items-center justify-center cursor-pointer"
       >

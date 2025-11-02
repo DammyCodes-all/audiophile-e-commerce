@@ -4,12 +4,15 @@ import Link from "next/link";
 export const BigBtn = ({
   text,
   className,
+  onClick,
 }: {
   text?: string;
   className?: string;
+  onClick?: () => void;
 }) => {
   return (
     <Button
+      onClick={onClick}
       className={`uppercase flex justify-center items-center rounded-none font-bold tracking-[1px] bg-theme-dark-orange hover:bg-theme-light-orange transition-classNames duration-300 text-xs sm:text-sm cursor-pointer px-6 sm:px-8 py-3 sm:py-4 ${className}`}
     >
       {text ?? "SEE PRODUCTS"}

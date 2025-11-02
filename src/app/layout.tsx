@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description: "Your one-stop shop for high-quality audio gear",
 };
 import Footer from "@/components/footer";
+import { CartContextProvider } from "@/components/CartContext";
 
 export default function RootLayout({
   children,
@@ -18,7 +19,9 @@ export default function RootLayout({
       <body
         className={`${manrope.className} antialiased max-w-[1440px] mx-auto text-theme-light`}
       >
-        <Navbar /> {children} <Footer />
+        <CartContextProvider>
+          <Navbar /> {children} <Footer />
+        </CartContextProvider>
       </body>
     </html>
   );
