@@ -5,7 +5,7 @@ export interface CartProduct {
   name: string;
   price: number;
   amount: number;
-  imageUrl?: string;
+  imageUrl: string;
 }
 
 interface CartContextType {
