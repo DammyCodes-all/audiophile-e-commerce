@@ -6,7 +6,7 @@ import CartProduct from "@/components/CartProduct";
 const Summary = () => {
   const { cartProducts } = useCartContext();
   return (
-    <div className="size-full rounded-md md:w-4/10 bg-theme-white flex flex-col gap-8 p-10">
+    <div className="w-full md:w-[35%] size-full rounded-md bg-theme-white flex flex-col gap-5 p-6 md:p-8">
       <h2 className="uppercase tracking-[1.2px] font-bold">summary</h2>
       <div className="flex flex-col gap-5 justify-center ">
         {cartProducts.map((product) => (
