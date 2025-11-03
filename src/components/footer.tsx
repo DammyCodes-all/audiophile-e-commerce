@@ -4,8 +4,8 @@ import { Button } from "./ui/button";
 import { Facebook, TwitterIcon, Instagram } from "lucide-react";
 const Footer = () => {
   return (
-    <footer className="w-full bg-theme-black min-h-[50dvh] mt-20 px-10 md:px-40 space-y-10 flex flex-col items-center justify-center sm:items-start py-0 pb-10">
-      <div className="h-1 w-28 bg-theme-dark-orange flex flex-col"></div>
+    <footer className="w-full bg-theme-black min-h-[50dvh] mt-20 px-10 md:px-40 space-y-10 flex flex-col items-center sm:items-start py-0 pb-10">
+      <div className="h-1 w-28 bg-theme-dark-orange flex flex-col mt-0 pt-0 top-0"></div>
       <section className="flex justify-center flex-col sm:flex-row sm:justify-between items-center sm:flex-wrap gap-8 w-full">
         <h2 className="font-extrabold text-theme-white text-2xl">audiophile</h2>
         <nav className="flex flex-col sm:flex-row gap-8  text-center">

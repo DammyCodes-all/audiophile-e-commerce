@@ -52,7 +52,7 @@ const SuccessModal = ({ open, onOpenChange }: SuccessModalProps) => {
 
           <div className="w-full flex flex-col sm:flex-row justify-between items-stretch overflow-hidden rounded-lg">
             <div className="flex-1 bg-theme-lightgray flex flex-col gap-4 items-center justify-center p-6 size-full">
-              <div className="flex justify-between items-center border-b border-theme-black/8 pb-4 w-full">
+              <div className="flex  justify-between items-center border-b border-theme-black/8 pb-4 w-full ">
                 <div className="flex gap-2 items-center">
                   <div className="flex items-center justify-center aspect-square w-16 sm:w-20 overflow-hidden">
                     <Image
@@ -82,7 +82,7 @@ const SuccessModal = ({ open, onOpenChange }: SuccessModalProps) => {
               )}
             </div>
 
-            <div className="bg-theme-black flex flex-col gap-2 p-6 justify-center items-center sm:items-start w-1/2">
+            <div className="bg-theme-black flex flex-col gap-2 p-6 justify-center items-center sm:items-start sm:w-1/2">
               <p className="text-theme-white/50 text-xs uppercase">
                 Grand Total
               </p>

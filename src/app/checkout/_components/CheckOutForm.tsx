@@ -41,7 +41,7 @@ const CheckOutForm = ({
         <h2 className="text-theme-dark-orange text-left uppercase traking-[1.2px]">
           Billing details
         </h2>
-        <div className=" flex justify-between items-center gap-4">
+        <div className=" flex justify-between sm:items-center gap-4 sm:flex-row flex-col">
           <Input
             name="name"
             label="Name"
@@ -59,7 +59,7 @@ const CheckOutForm = ({
             error={errors.email}
           />
         </div>
-        <div className=" flex justify-between items-center gap-4">
+        <div className=" flex justify-between sm:items-center gap-4 sm:flex-row flex-col">
           <Input
             name="phone"
             label="Phone Number"
@@ -68,14 +68,14 @@ const CheckOutForm = ({
             onChange={handleInputChange}
             error={errors.phone}
           />
-          <div className="flex-1"></div>
+          <div className="flex-1 hidden sm:block"></div>
         </div>
       </div>
       <div className="mt-5 flex flex-col gap-10 font-bold">
         <h2 className="text-theme-dark-orange text-left uppercase traking-[1.2px]">
           shipping info
         </h2>
-        <div className=" flex justify-between items-center gap-4">
+        <div className=" flex justify-between sm:items-center gap-4 sm:flex-row flex-col">
           <Input
             name="address"
             label="Address"
@@ -85,7 +85,7 @@ const CheckOutForm = ({
             error={errors.address}
           />
         </div>
-        <div className=" flex justify-between items-center gap-4">
+        <div className=" flex justify-between sm:items-center gap-4 sm:flex-row flex-col">
           <Input
             name="zipCode"
             label="ZIP Code"
@@ -103,7 +103,7 @@ const CheckOutForm = ({
             error={errors.city}
           />
         </div>
-        <div className=" flex justify-between items-center gap-4">
+        <div className=" flex justify-between sm:items-center gap-4 sm:flex-row flex-col">
           <Input
             name="country"
             label="Country"
@@ -112,14 +112,14 @@ const CheckOutForm = ({
             onChange={handleInputChange}
             error={errors.country}
           />
-          <div className="flex-1"></div>
+          <div className="flex-1 hidden sm:block"></div>
         </div>
       </div>
       <div className="mt-5 flex flex-col gap-10 font-bold">
         <h2 className="text-theme-dark-orange text-left uppercase traking-[1.2px]">
           payment details
         </h2>
-        <div className="flex justify-between gap-4">
+        <div className="flex justify-between gap-4 sm:flex-row flex-col">
           <h1 className="flex-1">Payment Method</h1>
           <div className="flex flex-col gap-4 w-full flex-1">
             <RadioOption
@@ -138,7 +138,7 @@ const CheckOutForm = ({
         </div>
       </div>
       {formData.paymentMethod === "e-Money" && (
-        <div className="flex justify-between items-center gap-4">
+        <div className="flex justify-between sm:items-center gap-4 sm:flex-row flex-col">
           <Input
             name="eMoneyNumber"
             label="e-Money Number"
