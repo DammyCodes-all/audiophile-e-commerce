@@ -7,7 +7,7 @@ import { BigBtn } from "@/components/btn";
 import { calculateCartTotal, useCartContext } from "@/components/CartContext";
 import CartProduct from "@/components/CartProduct";
 import type { CheckoutFormData } from "../page";
-import { api } from "../../../../convex/_generated/api";
+import { api } from "@/convex/_generated/api";
 import SuccessModal from "./SuccesModal";
 
 interface SummaryProps {
