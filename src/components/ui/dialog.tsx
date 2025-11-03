@@ -51,7 +51,6 @@ function DialogContent({
   children,
   showCloseButton = true,
   position = "center",
-  allowScroll = false,
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Content> & {
   showCloseButton?: boolean;
