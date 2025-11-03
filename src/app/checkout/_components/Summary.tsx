@@ -1,10 +1,129 @@
 "use client";
 
+import { useState } from "react";
+import { useMutation } from "convex/react";
+import { toast } from "sonner";
 import { BigBtn } from "@/components/btn";
 import { calculateCartTotal, useCartContext } from "@/components/CartContext";
 import CartProduct from "@/components/CartProduct";
-const Summary = ({ onCheckOut }: { onCheckOut?: () => void }) => {
-  const { cartProducts } = useCartContext();
+import type { CheckoutFormData } from "../page";
+import { api } from "../../../../convex/_generated/api";
+
+interface SummaryProps {
+  onCheckout: () => { success: boolean; data: CheckoutFormData | null };
+}
+
+const Summary = ({ onCheckout }: SummaryProps) => {
+  const { cartProducts, clearCart } = useCartContext();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const createOrder = useMutation(api.orders.createOrder);
+
+  const subtotal = calculateCartTotal(cartProducts);
+  const shipping = 50;
+  const vat = 1079;
+  const grandTotal = subtotal + shipping + vat;
+
+  const handleSubmit = async () => {
+    // Validate form
+    const result = onCheckout();
+    if (!result.success || !result.data) {
+      toast.error("Please fill in all required fields correctly");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Generate order ID
+      const orderId = `ORD-${Date.now()}-${Math.random()
+        .toString(36)
+        .substring(2, 9)
+        .toUpperCase()}`;
+
+      // Prepare order data for email
+      const orderEmailData = {
+        formData: result.data,
+        items: cartProducts.map((item) => ({
+          name: item.name,
+          price: item.price,
+          amount: item.amount,
+          imageUrl: item.imageUrl,
+        })),
+        subtotal,
+        shipping,
+        vat,
+        grandTotal,
+        orderId,
+      };
+
+      // Try to send email first
+      let emailSent = false;
+
+      try {
+        const emailResponse = await fetch("/api/send-order-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(orderEmailData),
+        });
+
+        if (emailResponse.ok) {
+          emailSent = true;
+        } else {
+          toast.error("Failed to send confirmation email");
+        }
+      } catch (emailError) {
+        console.error("Email sending error:", emailError);
+        toast.error("Failed to send confirmation email");
+      }
+
+      // Save order to Convex regardless of email status
+      try {
+        await createOrder({
+          name: result.data.name,
+          email: result.data.email,
+          phone: result.data.phone,
+          address: result.data.address,
+          city: result.data.city,
+          country: result.data.country,
+          zipCode: result.data.zipCode,
+          paymentMethod: result.data.paymentMethod,
+          eMoneyNumber: result.data.eMoneyNumber,
+          eMoneyPin: result.data.eMoneyPin,
+          items: cartProducts.map((item) => ({
+            name: item.name,
+            price: item.price,
+            amount: item.amount,
+            imageUrl: item.imageUrl,
+          })),
+          subtotal,
+          shipping,
+          vat,
+          grandTotal,
+        });
+
+        // Clear cart after successful order creation
+        clearCart();
+
+        if (emailSent) {
+          toast.success("Order placed successfully! Check your email for confirmation.");
+        } else {
+          toast.warning(
+            "Order placed but confirmation email failed. Please contact support."
+          );
+        }
+      } catch (convexError) {
+        console.error("Convex error:", convexError);
+        toast.error("Failed to save order. Please try again.");
+      }
+    } catch (error) {
+      console.error("Checkout error:", error);
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <div className="w-full md:w-[35%] size-full rounded-md bg-theme-white flex flex-col gap-5 p-6 md:p-8">
       <h2 className="uppercase tracking-[1.2px] font-bold">summary</h2>
@@ -45,7 +164,11 @@ const Summary = ({ onCheckOut }: { onCheckOut?: () => void }) => {
           ).toLocaleString()}`}</h2>
         </div>
       </div>
-      <BigBtn text="Continue & pay" onClick={onCheckOut} />
+      <BigBtn 
+        text={isSubmitting ? "Processing..." : "Continue & pay"} 
+        onClick={handleSubmit}
+        disabled={isSubmitting}
+      />
     </div>
   );
 };

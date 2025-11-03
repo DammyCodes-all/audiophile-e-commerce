@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { manrope } from "@/lib/fonts";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+import { CartContextProvider } from "@/components/CartContext";
+import { ConvexClientProvider } from "@/components/ConvexProvider";
+import { Toaster } from "sonner";
+
 export const metadata: Metadata = {
   title: "Audiophile E-Commerce",
   description: "Your one-stop shop for high-quality audio gear",
 };
-import Footer from "@/components/footer";
-import { CartContextProvider } from "@/components/CartContext";
-import { ConvexClientProvider } from "@/components/ConvexProvider";
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -22,6 +24,11 @@ export default function RootLayout({
         <ConvexClientProvider>
           <CartContextProvider>
             <Navbar /> {children} <Footer />
+            <Toaster 
+              position="top-center"
+              richColors
+              closeButton
+            />
           </CartContextProvider>
         </ConvexClientProvider>
       </body>

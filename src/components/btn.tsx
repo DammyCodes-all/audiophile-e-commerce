@@ -5,15 +5,18 @@ export const BigBtn = ({
   text,
   className,
   onClick,
+  disabled,
 }: {
   text?: string;
   className?: string;
   onClick?: () => void;
+  disabled?: boolean;
 }) => {
   return (
     <Button
       onClick={onClick}
-      className={`uppercase flex justify-center items-center rounded-none font-bold tracking-[1px] bg-theme-dark-orange hover:bg-theme-light-orange transition-classNames duration-300 text-xs sm:text-sm cursor-pointer px-6 sm:px-8 py-3 sm:py-4 ${className}`}
+      disabled={disabled}
+      className={`uppercase flex justify-center items-center rounded-none font-bold tracking-[1px] bg-theme-dark-orange hover:bg-theme-light-orange transition-classNames duration-300 text-xs sm:text-sm cursor-pointer px-6 sm:px-8 py-3 sm:py-4 disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
     >
       {text ?? "SEE PRODUCTS"}
     </Button>
