@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 import Footer from "@/components/footer";
 import { CartContextProvider } from "@/components/CartContext";
-
+import { ConvexClientProvider } from "@/components/ConvexProvider";
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -19,9 +19,11 @@ export default function RootLayout({
       <body
         className={`${manrope.className} antialiased max-w-[1440px] mx-auto text-theme-light`}
       >
-        <CartContextProvider>
-          <Navbar /> {children} <Footer />
-        </CartContextProvider>
+        <ConvexClientProvider>
+          <CartContextProvider>
+            <Navbar /> {children} <Footer />
+          </CartContextProvider>
+        </ConvexClientProvider>
       </body>
     </html>
   );

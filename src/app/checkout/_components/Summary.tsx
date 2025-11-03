@@ -3,7 +3,7 @@
 import { BigBtn } from "@/components/btn";
 import { calculateCartTotal, useCartContext } from "@/components/CartContext";
 import CartProduct from "@/components/CartProduct";
-const Summary = () => {
+const Summary = ({ onCheckOut }: { onCheckOut?: () => void }) => {
   const { cartProducts } = useCartContext();
   return (
     <div className="w-full md:w-[35%] size-full rounded-md bg-theme-white flex flex-col gap-5 p-6 md:p-8">
@@ -45,7 +45,7 @@ const Summary = () => {
           ).toLocaleString()}`}</h2>
         </div>
       </div>
-      <BigBtn text="Continue & pay" />
+      <BigBtn text="Continue & pay" onClick={onCheckOut} />
     </div>
   );
 };

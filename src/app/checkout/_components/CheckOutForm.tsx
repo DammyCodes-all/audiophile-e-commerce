@@ -94,7 +94,6 @@ const CheckOutForm = () => {
     const fieldName = name as keyof CheckoutFormData;
     setFormData((prev) => ({ ...prev, [fieldName]: value }));
 
-    // Validate on change (only if field has been touched or has an error)
     if (value || errors[fieldName]) {
       validateField(fieldName, value);
     }
@@ -212,25 +211,26 @@ const CheckOutForm = () => {
           </div>
         </div>
       </div>
-
-      <div className="flex justify-between items-center gap-4">
-        <Input
-          name="eMoneyNumber"
-          label="e-Money Number"
-          placeholder="238521993"
-          value={formData.eMoneyNumber}
-          onChange={handleInputChange}
-          error={errors.eMoneyNumber}
-        />
-        <Input
-          name="eMoneyPin"
-          label="e-Money PIN"
-          placeholder="6891"
-          value={formData.eMoneyPin}
-          onChange={handleInputChange}
-          error={errors.eMoneyPin}
-        />
-      </div>
+      {formData.paymentMethod === "e-Money" && (
+        <div className="flex justify-between items-center gap-4">
+          <Input
+            name="eMoneyNumber"
+            label="e-Money Number"
+            placeholder="238521993"
+            value={formData.eMoneyNumber}
+            onChange={handleInputChange}
+            error={errors.eMoneyNumber}
+          />
+          <Input
+            name="eMoneyPin"
+            label="e-Money PIN"
+            placeholder="6891"
+            value={formData.eMoneyPin}
+            onChange={handleInputChange}
+            error={errors.eMoneyPin}
+          />
+        </div>
+      )}
     </div>
   );
 };
