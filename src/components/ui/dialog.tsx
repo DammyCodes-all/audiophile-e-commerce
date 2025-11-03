@@ -67,11 +67,7 @@ function DialogContent({
   };
   return (
     <DialogPortal data-slot="dialog-portal">
-      <DialogOverlay
-        className={cn(
-          allowScroll ? "pointer-events-none bg-transparent" : undefined
-        )}
-      />
+      <DialogOverlay className={cn()} />
       <DialogPrimitive.Content
         data-slot="dialog-content"
         className={cn(
