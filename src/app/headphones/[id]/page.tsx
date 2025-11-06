@@ -35,6 +35,9 @@ const Dynamicpage = async ({ params }: { params: Promise<{ id: string }> }) => {
         includes={headphone.includes}
       />
       <Gallery gallery={headphone.gallery} />
+      <p className="w-full text-center flex items-center justify-center text-2xl font-bold uppercase text-black">
+        You may also like
+      </p>
       <div className="flex sm:flex-row flex-col justify-center items-center md:justify-between gap-10">
         {headphone.others.map((item) => (
           <ProductCard
