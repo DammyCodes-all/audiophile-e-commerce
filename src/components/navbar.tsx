@@ -20,10 +20,7 @@ import { BigBtn } from "./btn";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { cartProducts, clearCart } = useCartContext();
-  const totalItems = cartProducts.reduce(
-    (acc, product) => acc + (product.amount ?? 0),
-    0
-  );
+  const totalItems = cartProducts.length;
 
   return (
     <div className="w-full flex bg-theme-dark justify-center items-center px-10 lg:px-[165px] z-50 ">
@@ -56,7 +53,9 @@ const Navbar = () => {
         <Dialog>
           <DialogTrigger asChild>
             <button
-              aria-label={`Open cart${totalItems ? `, ${totalItems} items` : ""}`}
+              aria-label={`Open cart${
+                totalItems ? `, ${totalItems} items` : ""
+              }`}
               className="relative text-theme-white cursor-pointer"
             >
               <ShoppingCart />
