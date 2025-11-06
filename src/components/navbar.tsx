@@ -97,15 +97,19 @@ const Navbar = () => {
                 />
               ))}
             </div>
-            <div className="w-full flex justify-between items-center">
-              <p className="text-theme-black/50 ">TOTAL</p>
-              <h2 className="text-xl font-bold">{`$${calculateCartTotal(
-                cartProducts
-              ).toLocaleString()}`}</h2>
-            </div>
-            <Link href="/checkout">
-              <BigBtn text="CheckOut" className="w-full" />
-            </Link>
+            {cartProducts.length > 0 && (
+              <>
+                <div className="w-full flex justify-between items-center">
+                  <p className="text-theme-black/50 ">TOTAL</p>
+                  <h2 className="text-xl font-bold">{`$${calculateCartTotal(
+                    cartProducts
+                  ).toLocaleString()}`}</h2>
+                </div>
+                <Link href="/checkout">
+                  <BigBtn text="CheckOut" className="w-full" />
+                </Link>
+              </>
+            )}
           </DialogContent>
         </Dialog>
       </div>
