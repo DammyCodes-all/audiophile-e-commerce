@@ -77,8 +77,7 @@ const Summary = ({ onCheckout }: SummaryProps) => {
         toast.error("Failed to send confirmation email");
       }
 
-      // Save order to Convex regardless of email status
-      try {
+
         await createOrder({
           name: result.data.name,
           email: result.data.email,
@@ -114,10 +113,6 @@ const Summary = ({ onCheckout }: SummaryProps) => {
             "Order placed but confirmation email failed. Please contact support."
           );
         }
-      } catch (convexError) {
-        console.error("Convex error:", convexError);
-        toast.error("Failed to save order. Please try again.");
-      }
     } catch (error) {
       console.error("Checkout error:", error);
       toast.error("Something went wrong. Please try again.");
