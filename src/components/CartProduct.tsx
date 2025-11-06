@@ -35,11 +35,13 @@ const CartProduct = ({
           ) : null}
         </div>
         <div className="flex flex-col justify-center gap-2 text-black text-md">
-          <p className="font-bold">{name}</p>
-          <p className="text-black/50 font-bold">${price.toLocaleString()}</p>
+          <p className="font-bold md:text-md text-sm">{name}</p>
+          <p className="text-black/50 font-bold md:text-md text-sm">
+            ${price.toLocaleString()}
+          </p>
         </div>
       </div>
-      <div>
+      <div className="flex-1">
         {summary ? (
           <p className="font-bold text-theme-black/50">x{amount}</p>
         ) : (

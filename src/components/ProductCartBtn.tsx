@@ -10,7 +10,7 @@ type Props = {
 
 const ProductCartBtn = ({ count, onIncrement, onDecrement }: Props) => {
   return (
-    <div className="flex bg-theme-lightgray p-3 gap-4 justify-between items-center w-28 h-full">
+    <div className="flex bg-theme-lightgray p-3 gap-3 sm:gap-4 justify-between items-center  sm:w-28 h-full">
       <button
         type="button"
         onClick={onDecrement}
